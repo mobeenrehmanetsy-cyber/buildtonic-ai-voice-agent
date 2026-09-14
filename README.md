@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Buildtonic website prototype
 
-## Getting Started
+A self-contained Next.js App Router website for Buildtonic's heritage and residential construction work. Phase 1 includes 22 local content routes, six genuine project stories and an unconnected browser voice receptionist interface.
 
-First, run the development server:
+## Run locally
 
-```bash
+```sh
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Production preview:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run build
+npm start -- --port 3100
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Requires Node compatible with Next.js 16 (at least 20.9). Use the committed npm lockfile. No environment variables are needed for this phase.
 
-## Learn More
+## Validate
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+npm run lint
+npx tsc --noEmit --incremental false
+npm run build
+node --test tests/voice-model.test.mjs
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The dependency-free model tests use Node's TypeScript stripping, available in the workspace's Node 24 installation. Browser and axe audits were run with temporary tooling outside the project dependencies; results and reviewed screenshots are in `docs/review/`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Structure
 
-## Deploy on Vercel
+- `app/content/` — verified company, service, heritage and FAQ content.
+- `app/projects/` — portfolio data, index and statically generated case studies.
+- `app/expertise/` — service hub and statically generated detailed pages.
+- `app/components/` — shared header and editorial presentation.
+- `app/voice/` — local UI shell, future session contract, language and page context.
+- `public/images/` — authentic public Buildtonic project assets, with source records in documentation.
+- `docs/final-phase-1-reference.md` — research, exclusions, user journeys and future integration boundaries.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Current behaviour
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Navigation remains within this application. Only third-party accreditation profiles and email/telephone actions are external. Contact links open the visitor's own applications; there is no form delivery, database or callback service.
+
+The voice panel can be opened and topics selected. It cannot connect to AI, access a microphone, create a transcript or make a call. The future adapter contracts do not implement provider connections. No API credentials are required or included.
+
+Pages retain `noindex, nofollow` for this demonstration. Company approval of content, image rights and the applicable privacy notice belongs before an official public launch. No commit, push or deployment is part of the Phase 1 refinement.
