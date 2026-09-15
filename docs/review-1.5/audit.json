@@ -1,0 +1,251 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "title": "Buildtonic | Heritage & Residential Construction",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/projects",
+      "status": 200,
+      "title": "Our work | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/projects/rose-cottage",
+      "status": 200,
+      "title": "Rose Cottage | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/projects/guildford-quaker-meeting-house",
+      "status": 200,
+      "title": "Guildford Quaker Meeting House | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/projects/the-old-thatch",
+      "status": 200,
+      "title": "The Old Thatch | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/projects/the-laurels",
+      "status": 200,
+      "title": "The Laurels | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/projects/elm-park-gardens",
+      "status": 200,
+      "title": "Elm Park Gardens | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/projects/winters-hill",
+      "status": 200,
+      "title": "Winter’s Hill Eco House | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/expertise",
+      "status": 200,
+      "title": "Our expertise | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/expertise/new-homes",
+      "status": 200,
+      "title": "New homes | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/expertise/extensions-renovations",
+      "status": 200,
+      "title": "Extensions & renovations | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/expertise/consent",
+      "status": 200,
+      "title": "Listed Building Consent coordination | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/expertise/surveys",
+      "status": 200,
+      "title": "Surveys & building concerns | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/heritage",
+      "status": 200,
+      "title": "Heritage & conservation | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "title": "About Buildtonic | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/areas",
+      "status": 200,
+      "title": "Areas we cover | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/faq",
+      "status": 200,
+      "title": "Frequently asked questions | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/guides",
+      "status": 200,
+      "title": "Planning your project | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/health-and-safety",
+      "status": 200,
+      "title": "Health & safety | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/careers",
+      "status": 200,
+      "title": "Careers | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/start-project",
+      "status": 200,
+      "title": "Start a project | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "title": "Privacy & this preview | Buildtonic",
+      "h1": 1,
+      "noindex": "noindex, nofollow"
+    }
+  ],
+  "viewports": [],
+  "accessibility": [],
+  "external": [
+    {
+      "route": "/about",
+      "href": "https://builders.org.uk/members/buildtonic-ltd/",
+      "label": "NFB\nHeritage Approved Contractor\nView member profile ↗\n(opens in a new tab)"
+    },
+    {
+      "route": "/about",
+      "href": "https://www.fmb.org.uk/builder/buildtonic-ltd.html",
+      "label": "FMB\nFederation of Master Builders · Member\nView member profile ↗\n(opens in a new tab)"
+    },
+    {
+      "route": "/privacy",
+      "href": "mailto:team@buildtonic.co.uk",
+      "label": "team@buildtonic.co.uk"
+    },
+    {
+      "route": "/privacy",
+      "href": "tel:+442081292694",
+      "label": "020 8129 2694"
+    },
+    {
+      "route": "/projects/rose-cottage",
+      "href": "https://www.youtube.com/watch?v=e38d-HDWi7Y",
+      "label": "Client testimonial · Ben Rivera (YouTube)\n(opens in a new tab)"
+    },
+    {
+      "route": "/projects/rose-cottage",
+      "href": "https://www.instagram.com/reel/DUjeKVJDJcO/",
+      "label": "Before · published project reel (Instagram)\n(opens in a new tab)"
+    },
+    {
+      "route": "/projects/rose-cottage",
+      "href": "https://www.instagram.com/p/DPWklRoDI6y/",
+      "label": "After · published project post (Instagram)\n(opens in a new tab)"
+    },
+    {
+      "route": "/projects/the-old-thatch",
+      "href": "https://www.youtube.com/watch?v=Ua2ZZQmmytw",
+      "label": "Client testimonial (YouTube)\n(opens in a new tab)"
+    },
+    {
+      "route": "/projects/the-laurels",
+      "href": "https://www.instagram.com/p/DZC4G7lDCGy/",
+      "label": "Project walkthrough (Instagram)\n(opens in a new tab)"
+    },
+    {
+      "route": "/projects/the-laurels",
+      "href": "https://www.instagram.com/p/DYU_XMEMqSC/",
+      "label": "Further project footage (Instagram)\n(opens in a new tab)"
+    },
+    {
+      "route": "/health-and-safety",
+      "href": "mailto:team@buildtonic.co.uk?subject=Health%20and%20safety%20documentation",
+      "label": "Request policy documentation"
+    },
+    {
+      "route": "/careers",
+      "href": "mailto:team@buildtonic.co.uk?subject=Working%20with%20Buildtonic",
+      "label": "Email your CV"
+    }
+  ],
+  "invalidLinks": [],
+  "images": [],
+  "errors": [],
+  "voice": {
+    "focusInvitation": true,
+    "initialFocus1440": "Close assistant",
+    "context1440": "heritage",
+    "starter1440": "surveys",
+    "honestNotice1440": "Voice is not connected in this preview. Your microphone is off. Please explore the website or contact the team below.",
+    "focusContained1440": true,
+    "escapeClosed1440": true,
+    "focusRestored1440": true,
+    "mediaRequests1440": 0,
+    "initialFocus390": "Close assistant",
+    "context390": "heritage",
+    "starter390": "surveys",
+    "honestNotice390": "Voice is not connected in this preview. Your microphone is off. Please explore the website or contact the team below.",
+    "focusContained390": true,
+    "escapeClosed390": true,
+    "focusRestored390": true,
+    "mediaRequests390": 0,
+    "mobileNavigation": true,
+    "reducedMotion": {
+      "animation": "none",
+      "scroll": "auto"
+    }
+  },
+  "network": [],
+  "notFound": 404
+}

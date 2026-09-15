@@ -1,6 +1,6 @@
 "use client";
 import { voiceLabels, type VoiceSnapshot } from "./model";
-// Reserved for actual adapter events in Phase 2; never mounted by the preview shell.
+// State is driven by the active browser transport, never a simulated timer.
 export function SessionControls({
   snapshot,
   onMute,

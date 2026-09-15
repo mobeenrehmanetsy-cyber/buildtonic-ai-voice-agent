@@ -19,7 +19,7 @@ export default function HeritagePage() {
       />
       <div className="heritage-banner">
         <Image
-          src="/images/old-thatch-detail.webp"
+          src="/images/projects/the-old-thatch-facade.jpg"
           alt="Flint, brick and thatch at The Old Thatch in Hampshire"
           fill
           preload

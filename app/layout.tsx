@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import "./refinements.css";
+import "./architecture.css";
+import "./voice/assistant.css";
 import { Header } from "./components/header";
 import { Footer } from "./ui";
 import { VoiceAssistant } from "./voice/assistant";
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
     locale: "en_GB",
     type: "website",
     images: [
-      { url: "/images/rose-cottage.webp", alt: "Rose Cottage, Hampshire" },
+      { url: "/images/projects/rose-cottage-cover.jpg", alt: "Rose Cottage, Hampshire" },
     ],
   },
 };

@@ -1,0 +1,49 @@
+{
+  "flows": [
+    {
+      "width": 1920,
+      "review": true,
+      "download": true,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "review": true,
+      "download": true,
+      "overflow": false
+    },
+    {
+      "width": 1366,
+      "review": true,
+      "download": true,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "review": true,
+      "download": true,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "review": true,
+      "download": true,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "review": true,
+      "download": true,
+      "overflow": false
+    }
+  ],
+  "axe": [],
+  "errors": [],
+  "requests": [],
+  "referenceSiteRequests": [
+    {
+      "url": "https://buildtonic.co.uk/cdn-cgi/rum?",
+      "method": "POST"
+    }
+  ]
+}

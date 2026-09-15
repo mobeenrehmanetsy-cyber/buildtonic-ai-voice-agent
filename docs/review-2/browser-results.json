@@ -1,0 +1,398 @@
+{
+  "layouts": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "state": "idle",
+      "panel": {
+        "x": 932,
+        "y": 34,
+        "width": 480,
+        "height": 860,
+        "top": 34,
+        "right": 1412,
+        "bottom": 894,
+        "left": 932
+      },
+      "scroll": 858,
+      "client": 858,
+      "clientWidth": 478,
+      "composer": {
+        "x": 955,
+        "y": 707.21875,
+        "width": 434,
+        "height": 72.78125,
+        "top": 707.21875,
+        "right": 1389,
+        "bottom": 780,
+        "left": 955
+      },
+      "scrollWidth": 478
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "state": "denied",
+      "panel": {
+        "x": 932,
+        "y": 34,
+        "width": 480,
+        "height": 860,
+        "top": 34,
+        "right": 1412,
+        "bottom": 894,
+        "left": 932
+      },
+      "scroll": 858,
+      "client": 858,
+      "clientWidth": 478,
+      "composer": {
+        "x": 955,
+        "y": 707.21875,
+        "width": 434,
+        "height": 72.78125,
+        "top": 707.21875,
+        "right": 1389,
+        "bottom": 780,
+        "left": 955
+      },
+      "scrollWidth": 478
+    },
+    {
+      "width": 768,
+      "height": 1000,
+      "state": "idle",
+      "panel": {
+        "x": 260,
+        "y": 34,
+        "width": 480,
+        "height": 860,
+        "top": 34,
+        "right": 740,
+        "bottom": 894,
+        "left": 260
+      },
+      "scroll": 858,
+      "client": 858,
+      "clientWidth": 478,
+      "composer": {
+        "x": 283,
+        "y": 707.21875,
+        "width": 434,
+        "height": 72.78125,
+        "top": 707.21875,
+        "right": 717,
+        "bottom": 780,
+        "left": 283
+      },
+      "scrollWidth": 478
+    },
+    {
+      "width": 768,
+      "height": 1000,
+      "state": "denied",
+      "panel": {
+        "x": 260,
+        "y": 34,
+        "width": 480,
+        "height": 860,
+        "top": 34,
+        "right": 740,
+        "bottom": 894,
+        "left": 260
+      },
+      "scroll": 858,
+      "client": 858,
+      "clientWidth": 478,
+      "composer": {
+        "x": 283,
+        "y": 707.21875,
+        "width": 434,
+        "height": 72.78125,
+        "top": 707.21875,
+        "right": 717,
+        "bottom": 780,
+        "left": 283
+      },
+      "scrollWidth": 478
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "state": "idle",
+      "panel": {
+        "x": 0,
+        "y": 12,
+        "width": 390,
+        "height": 832,
+        "top": 12,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "scroll": 830,
+      "client": 830,
+      "clientWidth": 388,
+      "composer": {
+        "x": 17,
+        "y": 671.921875,
+        "width": 356,
+        "height": 72.78125,
+        "top": 671.921875,
+        "right": 373,
+        "bottom": 744.703125,
+        "left": 17
+      },
+      "scrollWidth": 388
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "state": "denied",
+      "panel": {
+        "x": 0,
+        "y": 12,
+        "width": 390,
+        "height": 832,
+        "top": 12,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "scroll": 830,
+      "client": 830,
+      "clientWidth": 388,
+      "composer": {
+        "x": 17,
+        "y": 671.921875,
+        "width": 356,
+        "height": 72.78125,
+        "top": 671.921875,
+        "right": 373,
+        "bottom": 744.703125,
+        "left": 17
+      },
+      "scrollWidth": 388
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "state": "idle",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568,
+        "top": 0,
+        "right": 320,
+        "bottom": 568,
+        "left": 0
+      },
+      "scroll": 566,
+      "client": 566,
+      "clientWidth": 318,
+      "composer": {
+        "x": 17,
+        "y": 460.21875,
+        "width": 286,
+        "height": 72.78125,
+        "top": 460.21875,
+        "right": 303,
+        "bottom": 533,
+        "left": 17
+      },
+      "scrollWidth": 318
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "state": "denied",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568,
+        "top": 0,
+        "right": 320,
+        "bottom": 568,
+        "left": 0
+      },
+      "scroll": 566,
+      "client": 566,
+      "clientWidth": 318,
+      "composer": {
+        "x": 17,
+        "y": 460.21875,
+        "width": 286,
+        "height": 72.78125,
+        "top": 460.21875,
+        "right": 303,
+        "bottom": 533,
+        "left": 17
+      },
+      "scrollWidth": 318
+    },
+    {
+      "width": 390,
+      "height": 500,
+      "state": "idle",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 500,
+        "top": 0,
+        "right": 390,
+        "bottom": 500,
+        "left": 0
+      },
+      "scroll": 498,
+      "client": 498,
+      "clientWidth": 388,
+      "composer": {
+        "x": 17,
+        "y": 392.21875,
+        "width": 356,
+        "height": 72.78125,
+        "top": 392.21875,
+        "right": 373,
+        "bottom": 465,
+        "left": 17
+      },
+      "scrollWidth": 388
+    },
+    {
+      "width": 390,
+      "height": 500,
+      "state": "denied",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 500,
+        "top": 0,
+        "right": 390,
+        "bottom": 500,
+        "left": 0
+      },
+      "scroll": 498,
+      "client": 498,
+      "clientWidth": 388,
+      "composer": {
+        "x": 17,
+        "y": 392.21875,
+        "width": 356,
+        "height": 72.78125,
+        "top": 392.21875,
+        "right": 373,
+        "bottom": 465,
+        "left": 17
+      },
+      "scrollWidth": 388
+    },
+    {
+      "width": 320,
+      "height": 500,
+      "state": "idle",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 500,
+        "top": 0,
+        "right": 320,
+        "bottom": 500,
+        "left": 0
+      },
+      "scroll": 498,
+      "client": 498,
+      "clientWidth": 318,
+      "composer": {
+        "x": 17,
+        "y": 392.21875,
+        "width": 286,
+        "height": 72.78125,
+        "top": 392.21875,
+        "right": 303,
+        "bottom": 465,
+        "left": 17
+      },
+      "scrollWidth": 318
+    },
+    {
+      "width": 320,
+      "height": 500,
+      "state": "denied",
+      "panel": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 500,
+        "top": 0,
+        "right": 320,
+        "bottom": 500,
+        "left": 0
+      },
+      "scroll": 498,
+      "client": 498,
+      "clientWidth": 318,
+      "composer": {
+        "x": 17,
+        "y": 392.21875,
+        "width": 286,
+        "height": 72.78125,
+        "top": 392.21875,
+        "right": 303,
+        "bottom": 465,
+        "left": 17
+      },
+      "scrollWidth": 318
+    }
+  ],
+  "axe": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "violations": []
+    },
+    {
+      "width": 768,
+      "height": 1000,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "violations": []
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "height": 500,
+      "violations": []
+    },
+    {
+      "width": 320,
+      "height": 500,
+      "violations": []
+    }
+  ],
+  "checks": [
+    "No microphone on open/text; denied voice leaves text available; real missing-key errors; retry without duplicate; Escape/focus restore/session history; six viewport sizes",
+    "Project, heritage, survey and new-home contextual starters",
+    "Isolated fixture: Enter/Shift+Enter, manual language, safe page payload, confirmation and explicit enquiry import"
+  ],
+  "errors": [],
+  "fixturePayload": {
+    "context": {
+      "pathname": "/heritage",
+      "pageType": "heritage",
+      "identifier": "heritage"
+    },
+    "language": "fr-FR"
+  }
+}

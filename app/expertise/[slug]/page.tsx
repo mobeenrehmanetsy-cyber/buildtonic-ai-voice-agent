@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { ProjectImage } from "../../components/project-image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { expertise } from "../../content/expertise";
@@ -38,15 +38,11 @@ export default async function ExpertisePage({
         title={item.title}
         description={item.intro}
       />
-      <figure className="wrap editorial-image">
+      <figure
+        className={`wrap editorial-image ${slug === "consent" || slug === "new-homes" ? "source-limited" : ""}`}
+      >
         <div>
-          <Image
-            src={item.image}
-            alt={item.imageAlt}
-            fill
-            preload
-            sizes="(min-width: 1800px) 1500px, 90vw"
-          />
+          <ProjectImage src={item.image} alt={item.imageAlt} preload />
         </div>
         <figcaption>{item.imageCaption}</figcaption>
       </figure>

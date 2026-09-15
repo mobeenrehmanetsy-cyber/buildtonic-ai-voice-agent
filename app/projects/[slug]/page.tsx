@@ -1,10 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { projects } from "../data";
+import { stories } from "../stories";
 import { Arrow } from "../../ui";
-import { EnquiryBand } from "../../components/editorial";
+import { ProjectImage } from "../../components/project-image";
+import { ProjectGallery } from "../gallery";
 export function generateStaticParams() {
   return projects.map(({ slug }) => ({ slug }));
 }
@@ -17,11 +18,7 @@ export async function generateMetadata({
   return {
     title: p?.title,
     description: p?.description,
-    openGraph: {
-      title: p?.title,
-      description: p?.description,
-      images: p ? [{ url: p.image, alt: p.alt }] : [],
-    },
+    openGraph: { images: p ? [{ url: p.image, alt: p.alt }] : [] },
   };
 }
 export default async function ProjectPage({
@@ -31,81 +28,138 @@ export default async function ProjectPage({
   const index = projects.findIndex((p) => p.slug === slug);
   const p = projects[index];
   if (!p) notFound();
+  const story = stories[slug];
+  const prev = projects[(index + projects.length - 1) % projects.length];
   const next = projects[(index + 1) % projects.length];
+  const compact =
+    slug === "elm-park-gardens" ||
+    slug === "guildford-quaker-meeting-house" ||
+    p.visual;
   return (
-    <main id="main-content" className="case-study">
-      <div className="wrap case-heading">
-        <Link href="/projects" className="text-link">
-          ← All work
+    <main
+      id="main-content"
+      className={`project-story ${compact ? "story-compact" : ""}`}
+    >
+      <header className="story-header wrap">
+        <Link className="text-link" href="/projects">
+          ← The project collection
         </Link>
-        <p className="eyebrow">
-          {p.category} / {p.place}
-          {p.year && ` / ${p.year}`}
-        </p>
-        <h1>{p.title}</h1>
-        <p className="case-lead">{p.description}</p>
-        {p.visual && (
-          <p className="visual-notice">
-            Images on this page are design visuals. They do not show the
-            completed building.
-          </p>
-        )}
-      </div>
-      <div className="case-hero">
-        <Image src={p.image} alt={p.alt} fill preload sizes="100vw" />
-        {p.visual && <span className="image-kind">Design visual</span>}
-      </div>
-      <section className="wrap case-body section-space">
-        <div>
+        <div className="story-title">
           <p className="eyebrow">
-            <span />
-            The work
+            Project / {String(index + 1).padStart(2, "0")}
           </p>
-          <h2>
-            A considered
-            <br />
-            <em>approach.</em>
-          </h2>
+          <h1>{p.title}</h1>
+        </div>
+        <dl className="story-facts">
+          <div>
+            <dt>Location</dt>
+            <dd>{p.place}</dd>
+          </div>
+          <div>
+            <dt>Discipline</dt>
+            <dd>{p.category}</dd>
+          </div>
+          {p.year && (
+            <div>
+              <dt>Published project year</dt>
+              <dd>{p.year}</dd>
+            </div>
+          )}
+        </dl>
+      </header>
+      <div className="story-opening wrap">
+        <figure className="story-hero">
+          <ProjectImage src={p.image} alt={p.alt} preload />
+          {p.visual && (
+            <figcaption className="visual-notice">
+              Design visual · not completed-build photography
+            </figcaption>
+          )}
+        </figure>
+        <div className="story-intro">
+          <p className="eyebrow">The brief</p>
+          <h2>{p.short}</h2>
+          <p>{p.description}</p>
+        </div>
+      </div>
+      <section className="story-detail wrap">
+        <div>
+          <p className="eyebrow">The approach</p>
+          <h2>{story.heading}</h2>
         </div>
         <div>
-          <p>{p.work}</p>
-          <ul>
+          <p>{story.detail}</p>
+          {story.note && !story.quote && (
+            <p className="story-note">{story.note}</p>
+          )}
+          <ul className="scope-list">
             {p.scope.map((s) => (
               <li key={s}>{s}</li>
             ))}
           </ul>
           <Link href={p.expertise ?? "/expertise"} className="text-link">
-            Explore the relevant expertise <Arrow />
+            Explore this expertise <Arrow />
           </Link>
         </div>
       </section>
-      <figure className="case-detail wrap">
-        <div>
-          <Image
-            src={p.detail}
-            alt={p.detailAlt}
-            fill
-            sizes="(min-width: 1800px) 1400px, 90vw"
-          />
-        </div>
-        <figcaption>
-          {p.title} · {p.location}
-          {p.visual && " · Design visual, not completed-build photography"}
-        </figcaption>
-      </figure>
-      <nav aria-label="More projects" className="wrap next-project">
-        <div>
-          <p className="eyebrow">Continue exploring</p>
-          <Link href={`/projects/${next.slug}`}>
-            <span>{next.title}</span>
-            <Arrow />
-          </Link>
-        </div>
-        <Link className="text-link" href="/projects">
-          View all work <Arrow />
+      {story.quote && (
+        <figure className="story-quote wrap">
+          <blockquote>“{story.quote}”</blockquote>
+          <figcaption>{story.note}</figcaption>
+        </figure>
+      )}
+      <ProjectGallery
+        title={p.title}
+        slug={slug}
+        visual={!!p.visual}
+        items={story.gallery}
+      />
+      {story.media && (
+        <section className="story-media wrap">
+          <div>
+            <p className="eyebrow">From the project</p>
+            <h2>Watch & explore.</h2>
+            <p>
+              Original media linked from Buildtonic’s project archive. These
+              open in a new tab on the named platform, which may require
+              sign-in.
+            </p>
+          </div>
+          <div>
+            {story.media.map((m) => (
+              <a key={m.href} href={m.href} target="_blank" rel="noreferrer">
+                {m.title}
+                <Arrow />
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+      <section className="story-enquiry wrap">
+        <p className="eyebrow">Inspired by {p.title}?</p>
+        <h2>
+          Your place.
+          <br />
+          <em>Your possibilities.</em>
+        </h2>
+        <Link
+          href={`/start-project?project=${p.slug}`}
+          className="button button-dark"
+        >
+          Discuss a similar project <Arrow />
+        </Link>
+      </section>
+      <nav className="story-navigation wrap" aria-label="More projects">
+        <Link href={`/projects/${prev.slug}`}>
+          <small>← Previous project</small>
+          <span>{prev.title}</span>
+        </Link>
+        <Link href={`/projects/${next.slug}`}>
+          <small>Next project →</small>
+          <span>{next.title}</span>
         </Link>
       </nav>
-      <EnquiryBand title="A project of your own?" />
     </main>
   );
 }

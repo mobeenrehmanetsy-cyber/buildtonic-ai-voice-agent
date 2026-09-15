@@ -1,349 +1,214 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { Arrow } from "./ui";
+import { ProjectEntry, Standards } from "./components/editorial";
 import { projects } from "./projects/data";
-
-const services = [
-  [
-    "Heritage & conservation",
-    "Sensitive repairs to listed and period buildings, with traditional materials and respect for the original fabric.",
-    "/heritage/",
-  ],
-  [
-    "New homes",
-    "Residential construction from the ground up, bringing structure, detail and finishing together under one contractor.",
-    "/expertise/new-homes",
-  ],
-  [
-    "Extensions & renovations",
-    "Thoughtful additions and renewed interiors that make room for the way you want to live.",
-    "/expertise/extensions-renovations",
-  ],
-  [
-    "Consent & surveys",
-    "Listed Building Consent coordination, condition reports and surveys to help establish the right next step.",
-    "/expertise#consent-surveys",
-  ],
-];
 
 export default function Home() {
   return (
-    <>
-      <main id="main-content">
-        <section className="hero" aria-labelledby="hero-title">
-          <Image
-            src="/images/rose-cottage.webp"
-            alt="Rose Cottage in Hampshire, with its restored white exterior and garden"
-            fill
-            preload
-            sizes="100vw"
-            className="hero-image"
-          />
-          <div className="hero-shade" />
-          <div className="hero-content wrap">
-            <p className="eyebrow light">
-              <span /> Heritage & residential construction
-            </p>
-            <h1 id="hero-title">
-              A respect for the past.
-              <br /> A vision for <em>what’s next.</em>
-            </h1>
-            <div className="hero-bottom">
-              <div>
-                <p>
-                  Considered construction. Lasting character.
-                  <br />
-                  Across Hampshire, Surrey & London.
-                </p>
-                <a className="button button-cream" href="#projects">
-                  Explore our work <Arrow />
-                </a>
-              </div>
-              <Link href="/projects/rose-cottage" className="hero-caption">
-                <span className="eyebrow">In focus / 01</span>
-                <span>
-                  Rose Cottage, Hampshire <Arrow />
-                </span>
-              </Link>
-            </div>
-          </div>
-          <div className="hero-foot wrap">
-            <span>Built with care. Made to last.</span>
-            <a href="#about">
-              Discover Buildtonic <span aria-hidden="true">↓</span>
-            </a>
-          </div>
-        </section>
-        <section id="about" className="intro wrap section-space">
-          <p className="eyebrow section-label">
-            <span /> The Buildtonic approach
+    <main id="main-content" className="new-home">
+      <section className="masthead wrap">
+        <div className="masthead-kicker">
+          <p className="eyebrow">Buildtonic / Main contractor</p>
+          <span>Hampshire · Surrey · London</span>
+        </div>
+        <h1>
+          Character.
+          <br />
+          <span>Built in.</span>
+        </h1>
+        <div className="masthead-aside">
+          <p>
+            Heritage buildings.
+            <br />
+            Contemporary homes.
+            <br />
+            Care in every detail.
           </p>
-          <div>
+          <Link href="/projects" className="text-link">
+            Discover our work <Arrow />
+          </Link>
+        </div>
+      </section>
+      <figure className="opening-image">
+        <Image
+          src="/images/projects/the-laurels-g6.jpg"
+          alt="The Laurels: panelled kitchen cabinetry, brass fittings and a light-filled breakfast space"
+          width={6000}
+          height={4000}
+          preload
+          sizes="100vw"
+        />
+        <figcaption>
+          <span>In detail / The Laurels, Hampshire</span>
+          <Link href="/projects/the-laurels">
+            Inside the project <Arrow />
+          </Link>
+        </figcaption>
+      </figure>
+      <section className="home-statement wrap">
+        <p className="eyebrow">A building’s next chapter</p>
+        <div>
+          <h2>
+            Keep what matters.
+            <br />
+            <em>Make room for more.</em>
+          </h2>
+          <p>
+            Buildtonic is a heritage and residential main contractor. We repair
+            historic fabric, rework existing homes and bring new buildings into
+            being. Different work, connected by a careful understanding of the
+            place and the people it is for.
+          </p>
+          <Link href="/about" className="text-link">
+            Get to know Buildtonic <Arrow />
+          </Link>
+        </div>
+      </section>
+      <section className="work-edit wrap" id="projects">
+        <div className="edit-heading">
+          <p className="eyebrow">The work / Selected stories</p>
+          <h2>
+            Places.
+            <br />
+            <em>With purpose.</em>
+          </h2>
+          <Link href="/projects" className="text-link">
+            All six projects <Arrow />
+          </Link>
+        </div>
+        <div className="work-edit-grid">
+          {[projects[0], projects[2], projects[5]].map((p, i) => (
+            <ProjectEntry key={p.slug} project={p} index={i} />
+          ))}
+        </div>
+      </section>
+      <section className="craft-chapter">
+        <div className="wrap craft-grid">
+          <div className="craft-title">
+            <p className="eyebrow">The fabric of a place</p>
             <h2>
-              Buildings with character.
+              Old hands.
               <br />
-              <em>People who care.</em>
+              New thinking.
             </h2>
-            <div className="intro-copy">
-              <p>
-                A home is more than its plans. It is the materials, the
-                decisions and the care that go into making it.
-              </p>
-              <p>
-                We are a main contractor specialising in heritage and
-                residential construction. From restoring a period property to
-                creating a new family home, we bring traditional craft and
-                considered project delivery together.
-              </p>
-            </div>
-            <Link className="text-link" href="/about">
-              Meet Buildtonic <Arrow />
+          </div>
+          <div className="craft-copy">
+            <p>
+              Flint, lime and timber each ask something different of a builder.
+              Understanding their character informs the repair, the material and
+              the detail.
+            </p>
+            <p>
+              That same attention carries through to structural alterations,
+              contemporary interiors and the delivery of a new home.
+            </p>
+            <Link href="/heritage" className="text-link">
+              Our heritage expertise <Arrow />
             </Link>
           </div>
-        </section>
-        <section id="projects" className="projects-section section-space">
-          <div className="wrap">
-            <div className="section-heading">
-              <div>
-                <p className="eyebrow">
-                  <span /> Selected work
-                </p>
-                <h2>
-                  Every building.
-                  <br />
-                  <em>Its own story.</em>
-                </h2>
-              </div>
-              <p>
-                From a Hampshire cottage to a Surrey landmark.
-                <br />A closer look at the work we do.
-              </p>
-            </div>
-            <div className="project-grid">
-              {projects.slice(0, 2).map((project, index) => (
-                <Link
-                  className={`project project-${index + 1}`}
-                  href={`/projects/${project.slug}`}
-                  key={project.slug}
-                >
-                  <div className="project-image">
-                    <Image
-                      src={project.image}
-                      alt={project.alt}
-                      fill
-                      sizes="(max-width: 700px) 90vw, 55vw"
-                    />
-                    <span className="project-open" aria-hidden="true">
-                      <Arrow />
-                    </span>
-                  </div>
-                  <div className="project-meta">
-                    <span>{project.category}</span>
-                    <span>{project.location}</span>
-                  </div>
-                  <h3>{project.title}</h3>
-                  <p>{project.short}</p>
-                  <span className="text-link">
-                    View the project <Arrow />
-                  </span>
-                </Link>
-              ))}
-            </div>
-            <div className="project-index">
-              <span className="eyebrow">Also in the collection</span>
-              <Link href="/projects">
-                View all work <span>Heritage · Renovation · New homes</span>
-                <Arrow />
-              </Link>
-            </div>
-          </div>
-        </section>
-        <section id="heritage" className="heritage-section">
-          <div className="heritage-photo">
+          <figure>
             <Image
-              src="/images/old-thatch-detail.webp"
-              alt="The thatched roof, flint and brick facade of The Old Thatch, Hampshire"
-              fill
-              sizes="(max-width: 800px) 100vw, 50vw"
+              src="/images/projects/the-old-thatch-cover.jpg"
+              alt="Traditional flint panels and brickwork at The Old Thatch"
+              width={2400}
+              height={1800}
+              sizes="(max-width: 700px) 90vw, 65vw"
             />
-            <span className="photo-note">The Old Thatch / Hampshire</span>
-          </div>
-          <div className="heritage-content">
-            <p className="eyebrow light">
-              <span /> A specialist understanding
-            </p>
-            <h2>
-              Some things
-              <br />
-              deserve to be
-              <br />
-              <em>preserved.</em>
-            </h2>
+            <figcaption>The Old Thatch / Flint and lime</figcaption>
+          </figure>
+          <div className="craft-note">
+            <span aria-hidden="true">↗</span>
             <p>
-              The texture of flint. The character of old timber. The quiet
-              beauty of a building that has stood for generations.
+              Start with the building.
+              <br />
+              Understand its fabric.
+              <br />
+              Choose the right approach.
             </p>
-            <p>
-              We approach heritage work by understanding what is already there.
-              Compatible lime mortars, breathable finishes and careful repairs
-              help protect the fabric that makes a place itself.
-            </p>
-            <div className="heritage-tags">
-              <span>Lime & limecrete</span>
-              <span>Historic timber & masonry</span>
-              <span>Listed building repairs</span>
-            </div>
-            <Link className="text-link light-link" href="/heritage">
-              Explore heritage <Arrow />
+            <Link href="/expertise/surveys" className="text-link">
+              Surveys & reports <Arrow />
             </Link>
           </div>
-        </section>
-        <section id="services" className="services-section wrap section-space">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">
-                <span /> Our expertise
-              </p>
-              <h2>
-                From first ideas
-                <br />
-                to <em>the final detail.</em>
-              </h2>
-            </div>
-            <p>
-              One considered approach.
-              <br />
-              Expertise shaped around your building.
-            </p>
-          </div>
-          <div className="service-list">
-            {services.map(([title, description, url], index) => (
-              <details className="service" key={title} open={index === 0}>
-                <summary>
-                  <span className="service-number">0{index + 1}</span>
-                  <h3>{title}</h3>
-                  <span className="service-toggle" aria-hidden="true" />
-                </summary>
-                <div className="service-description">
-                  <p>{description}</p>
-                  <Link className="text-link" href={url}>
-                    Explore this expertise <Arrow />
-                  </Link>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-        <section id="approach" className="approach-section section-space">
-          <div className="wrap">
-            <div className="section-heading">
+        </div>
+      </section>
+      <section className="capability-index wrap">
+        <div>
+          <p className="eyebrow">Your project, our expertise</p>
+          <h2>
+            What’s
+            <br />
+            <em>taking shape?</em>
+          </h2>
+        </div>
+        <div>
+          {[
+            [
+              "01",
+              "A new home",
+              "From the ground up, with one principal contractor.",
+              "/expertise/new-homes",
+            ],
+            [
+              "02",
+              "A home, reimagined",
+              "Extensions, structural changes and considered renovation.",
+              "/expertise/extensions-renovations",
+            ],
+            [
+              "03",
+              "A historic building",
+              "Traditional repairs and care for listed and period properties.",
+              "/heritage",
+            ],
+            [
+              "04",
+              "A clearer way forward",
+              "Consent coordination, condition surveys and reports.",
+              "/expertise#consent-surveys",
+            ],
+          ].map(([n, t, d, h]) => (
+            <Link href={h} key={n}>
+              <span>{n}</span>
               <div>
-                <p className="eyebrow">
-                  <span /> From conversation to completion
-                </p>
-                <h2>
-                  Good work starts
-                  <br />
-                  with <em>understanding.</em>
-                </h2>
+                <h3>{t}</h3>
+                <p>{d}</p>
               </div>
-              <Link href="/start-project" className="text-link">
-                Let’s talk about your project <Arrow />
-              </Link>
-            </div>
-            <div className="steps">
-              {[
-                [
-                  "01",
-                  "Listen & understand",
-                  "We begin with your plans and the building itself, identifying the brief, its constraints and the possibilities.",
-                ],
-                [
-                  "02",
-                  "Plan & prepare",
-                  "Surveys, specifications and consent coordination establish a clear basis for the programme and the work ahead.",
-                ],
-                [
-                  "03",
-                  "Build & deliver",
-                  "Site management and specialist trades bring the details together, from the first works through to handover.",
-                ],
-              ].map(([number, title, copy]) => (
-                <div key={number}>
-                  <span className="step-number">{number}</span>
-                  <h3>{title}</h3>
-                  <p>{copy}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        <section
-          className="credentials wrap"
-          aria-labelledby="credentials-title"
-        >
+              <Arrow />
+            </Link>
+          ))}
+        </div>
+      </section>
+      <section className="home-standards wrap">
+        <div className="edit-heading">
+          <p className="eyebrow">Professional foundations</p>
+          <h2>
+            Care you can
+            <br />
+            <em>build on.</em>
+          </h2>
+          <Link href="/health-and-safety" className="text-link">
+            Standards & site safety <Arrow />
+          </Link>
+        </div>
+        <Standards />
+      </section>
+      <section className="closing-chapter">
+        <div className="wrap">
+          <p className="eyebrow">Let’s begin with your ideas</p>
+          <h2>A place in mind?</h2>
           <div>
-            <p className="eyebrow" id="credentials-title">
-              Memberships & accreditations
+            <p>
+              Tell us about the building, the possibilities
+              <br />
+              and what you would like to happen next.
             </p>
-            <p>Craft, backed by accountability.</p>
+            <Link className="button button-cream" href="/start-project">
+              Shape your project brief <Arrow />
+            </Link>
           </div>
-          <a
-            href="https://builders.org.uk/members/buildtonic-ltd/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <strong>NFB</strong>
-            <span>
-              Heritage Approved Contractor
-              <span className="sr-only"> (opens in a new tab)</span>
-            </span>
-          </a>
-          <a
-            href="https://www.fmb.org.uk/builder/buildtonic-ltd.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <strong>FMB</strong>
-            <span>
-              Federation of Master Builders · Member
-              <span className="sr-only"> (opens in a new tab)</span>
-            </span>
-          </a>
-          <div className="credential">
-            <strong className="constructionline">Constructionline</strong>
-            <span>Silver</span>
-          </div>
-        </section>
-        <section id="contact" className="contact-section section-space">
-          <div className="wrap contact-grid">
-            <div>
-              <p className="eyebrow">
-                <span /> Your next chapter
-              </p>
-              <h2>
-                Something
-                <br />
-                <em>in mind?</em>
-              </h2>
-            </div>
-            <div className="contact-copy">
-              <p>
-                A new home, a sensitive restoration, or the beginnings of an
-                idea. Tell us about your building and what you would like to do.
-              </p>
-              <Link className="button button-dark" href="/start-project">
-                Start a project <Arrow />
-              </Link>
-              <div className="contact-direct">
-                <a href="mailto:team@buildtonic.co.uk">team@buildtonic.co.uk</a>
-                <a href="tel:+442081292694">020 8129 2694</a>
-              </div>
-              <span className="contact-area">Hampshire · Surrey · London</span>
-            </div>
-          </div>
-        </section>
-      </main>
-    </>
+        </div>
+      </section>
+    </main>
   );
 }

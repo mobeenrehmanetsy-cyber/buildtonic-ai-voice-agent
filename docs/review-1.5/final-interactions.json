@@ -1,0 +1,70 @@
+{
+  "journeys": [
+    "Home > new-home expertise > Winter's Hill > contextual enquiry",
+    "Heritage > consent/survey capability > Guildford > contextual enquiry",
+    "Home > renovation expertise > Laurels > contextual enquiry (full review/download tested separately)"
+  ],
+  "galleries": [
+    {
+      "width": 1920,
+      "rect": {
+        "x": 160,
+        "y": 76,
+        "width": 1600,
+        "height": 848
+      },
+      "focusTrap": true
+    },
+    {
+      "width": 1440,
+      "rect": {
+        "x": 18,
+        "y": 76,
+        "width": 1404,
+        "height": 848
+      },
+      "focusTrap": true
+    },
+    {
+      "width": 1366,
+      "rect": {
+        "x": 18,
+        "y": 76,
+        "width": 1330,
+        "height": 848
+      },
+      "focusTrap": true
+    },
+    {
+      "width": 768,
+      "rect": {
+        "x": 18,
+        "y": 208,
+        "width": 732,
+        "height": 584
+      },
+      "focusTrap": true
+    },
+    {
+      "width": 390,
+      "rect": {
+        "x": 8,
+        "y": 240.328125,
+        "width": 374,
+        "height": 363.328125
+      },
+      "focusTrap": true
+    },
+    {
+      "width": 320,
+      "rect": {
+        "x": 8,
+        "y": 263.671875,
+        "width": 304,
+        "height": 316.65625
+      },
+      "focusTrap": true
+    }
+  ],
+  "axe": []
+}

@@ -1,0 +1,347 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/projects",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/heritage",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/expertise",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/about",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/areas",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/faq",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/guides",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/health-and-safety",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/careers",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/start-project",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/privacy",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/projects/rose-cottage",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/projects/guildford-quaker-meeting-house",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/projects/the-old-thatch",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/projects/the-laurels",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/projects/elm-park-gardens",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/projects/winters-hill",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/expertise/new-homes",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/expertise/extensions-renovations",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/expertise/consent",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/expertise/surveys",
+      "width": 1440,
+      "status": 200
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/projects",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/heritage",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/expertise",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/about",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/areas",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/faq",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/guides",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/health-and-safety",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/careers",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/start-project",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/privacy",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/projects/rose-cottage",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/projects/guildford-quaker-meeting-house",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/projects/the-old-thatch",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/projects/the-laurels",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/projects/elm-park-gardens",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/projects/winters-hill",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/expertise/new-homes",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/expertise/extensions-renovations",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/expertise/consent",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/expertise/surveys",
+      "width": 390,
+      "status": 200
+    },
+    {
+      "path": "/",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/projects",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/heritage",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/expertise",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/about",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/areas",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/faq",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/guides",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/health-and-safety",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/careers",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/start-project",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/privacy",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/projects/rose-cottage",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/projects/guildford-quaker-meeting-house",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/projects/the-old-thatch",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/projects/the-laurels",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/projects/elm-park-gardens",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/projects/winters-hill",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/expertise/new-homes",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/expertise/extensions-renovations",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/expertise/consent",
+      "width": 320,
+      "status": 200
+    },
+    {
+      "path": "/expertise/surveys",
+      "width": 320,
+      "status": 200
+    }
+  ],
+  "galleries": [
+    "/projects/rose-cottage",
+    "/projects/guildford-quaker-meeting-house",
+    "/projects/the-old-thatch",
+    "/projects/the-laurels",
+    "/projects/elm-park-gardens",
+    "/projects/winters-hill"
+  ],
+  "checks": [
+    "Reading earlier messages is not interrupted by an arriving reply",
+    "Malformed text reply offers retry without adding an assistant message"
+  ],
+  "errors": []
+}

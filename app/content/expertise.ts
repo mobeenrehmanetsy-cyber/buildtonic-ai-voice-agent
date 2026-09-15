@@ -18,7 +18,7 @@ export const expertise: Expertise[] = [
     eyebrow: "New homes",
     intro:
       "Individual homes, replacement dwellings and garden annexes. Buildtonic delivers residential construction as principal contractor, from a bare site to the finishing details.",
-    image: "/images/winters-hill-visual.webp",
+    image: "/images/projects/winters-hill-cover.jpg",
     imageAlt: "Kitchen design visual for Winter’s Hill Eco House",
     imageCaption:
       "Winter’s Hill Eco House — design visual, not finished-build photography",
@@ -52,7 +52,7 @@ export const expertise: Expertise[] = [
     eyebrow: "Extensions & renovations",
     intro:
       "Create space, rework a layout or renew a whole property. Buildtonic combines structural alterations with the finishing work that makes the new and existing parts feel at home together.",
-    image: "/images/laurels.webp",
+    image: "/images/projects/the-laurels-g6.jpg",
     imageAlt: "Renovated living space at The Laurels",
     imageCaption: "The Laurels, Hampshire — residential renovation",
     sections: [
@@ -90,7 +90,7 @@ export const expertise: Expertise[] = [
     eyebrow: "Listed Building Consent coordination",
     intro:
       "Support with the information, methods and conversations behind a listed-building project. Buildtonic coordinates the construction brief with architects, heritage consultants and conservation officers.",
-    image: "/images/guildford.webp",
+    image: "/images/projects/guildford-quaker-meeting-house-cover.jpg",
     imageAlt: "Historic sash windows at Guildford Quaker Meeting House",
     imageCaption:
       "Guildford Quaker Meeting House — Grade II listed conservation work",
@@ -124,7 +124,7 @@ export const expertise: Expertise[] = [
     eyebrow: "Surveys & building concerns",
     intro:
       "Contractor-led assessments for owners and prospective buyers. Buildtonic’s survey services help establish the condition of a property and the work that may need attention.",
-    image: "/images/rose-detail.webp",
+    image: "/images/projects/rose-cottage-g2.jpg",
     imageAlt: "Aerial view of the roof and exterior of Rose Cottage",
     imageCaption: "Rose Cottage, Hampshire — project photography",
     sections: [

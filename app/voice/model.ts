@@ -1,3 +1,5 @@
+import type { ProjectBrief } from "../start-project/model";
+
 export type VoicePhase =
   | "idle"
   | "invitation"
@@ -49,6 +51,7 @@ export interface VoiceSessionAdapter {
   end(): Promise<void>;
 }
 export type QualifiedEnquiry = {
+  projectBrief?: Partial<ProjectBrief>;
   fullName?: string;
   projectLocation?: string;
   serviceInterest?: string;
