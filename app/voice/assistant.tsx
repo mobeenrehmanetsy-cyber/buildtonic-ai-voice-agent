@@ -78,7 +78,7 @@ export function VoiceAssistant() {
         onClose={() => {
           setOpen(false);
           setInvited(false);
-          launcher.current?.focus();
+          requestAnimationFrame(() => launcher.current?.focus());
         }}
         onKeyDown={(event) => {
           if (event.key !== "Tab") return;

@@ -1,5 +1,5 @@
 import {
-  assertLocalRequest,
+  assertSameOriginRequest,
   apiKey,
   errorResponse,
   json,
@@ -15,7 +15,7 @@ export const runtime = "nodejs";
 export const maxDuration = 30;
 export async function POST(request: Request) {
   try {
-    assertLocalRequest(request);
+    assertSameOriginRequest(request);
     limit("voice");
     const key = apiKey();
     const body = await readJson(request);

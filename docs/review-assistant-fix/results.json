@@ -1,0 +1,180 @@
+{
+  "fixtureNotice": "All API responses and media in these browser tests are isolated fixtures; no paid calls. Screenshots only show idle UI.",
+  "results": [
+    {
+      "width": 1920,
+      "voice": {
+        "x": 1413,
+        "y": 787.609375,
+        "width": 478,
+        "height": 94.390625,
+        "top": 787.609375,
+        "right": 1891,
+        "bottom": 882,
+        "left": 1413
+      },
+      "composer": {
+        "x": 1435,
+        "y": 691.828125,
+        "width": 434,
+        "height": 72.78125,
+        "top": 691.828125,
+        "right": 1869,
+        "bottom": 764.609375,
+        "left": 1435
+      },
+      "horizontalOverflow": false,
+      "voiceBackground": "rgba(0, 0, 0, 0)",
+      "axeViolations": 0,
+      "textLoadingReplyError": true,
+      "micDenied": true,
+      "muteEndCloseCleanup": true
+    },
+    {
+      "width": 1440,
+      "voice": {
+        "x": 933,
+        "y": 787.609375,
+        "width": 478,
+        "height": 94.390625,
+        "top": 787.609375,
+        "right": 1411,
+        "bottom": 882,
+        "left": 933
+      },
+      "composer": {
+        "x": 955,
+        "y": 691.828125,
+        "width": 434,
+        "height": 72.78125,
+        "top": 691.828125,
+        "right": 1389,
+        "bottom": 764.609375,
+        "left": 955
+      },
+      "horizontalOverflow": false,
+      "voiceBackground": "rgba(0, 0, 0, 0)",
+      "axeViolations": 0,
+      "textLoadingReplyError": true,
+      "micDenied": true,
+      "muteEndCloseCleanup": true
+    },
+    {
+      "width": 1366,
+      "voice": {
+        "x": 859,
+        "y": 787.609375,
+        "width": 478,
+        "height": 94.390625,
+        "top": 787.609375,
+        "right": 1337,
+        "bottom": 882,
+        "left": 859
+      },
+      "composer": {
+        "x": 881,
+        "y": 691.828125,
+        "width": 434,
+        "height": 72.78125,
+        "top": 691.828125,
+        "right": 1315,
+        "bottom": 764.609375,
+        "left": 881
+      },
+      "horizontalOverflow": false,
+      "voiceBackground": "rgba(0, 0, 0, 0)",
+      "axeViolations": 0,
+      "textLoadingReplyError": true,
+      "micDenied": true,
+      "muteEndCloseCleanup": true
+    },
+    {
+      "width": 768,
+      "voice": {
+        "x": 261,
+        "y": 787.609375,
+        "width": 478,
+        "height": 94.390625,
+        "top": 787.609375,
+        "right": 739,
+        "bottom": 882,
+        "left": 261
+      },
+      "composer": {
+        "x": 283,
+        "y": 691.828125,
+        "width": 434,
+        "height": 72.78125,
+        "top": 691.828125,
+        "right": 717,
+        "bottom": 764.609375,
+        "left": 283
+      },
+      "horizontalOverflow": false,
+      "voiceBackground": "rgba(0, 0, 0, 0)",
+      "axeViolations": 0,
+      "textLoadingReplyError": true,
+      "micDenied": true,
+      "muteEndCloseCleanup": true
+    },
+    {
+      "width": 390,
+      "voice": {
+        "x": 1,
+        "y": 671.609375,
+        "width": 388,
+        "height": 88.390625,
+        "top": 671.609375,
+        "right": 389,
+        "bottom": 760,
+        "left": 1
+      },
+      "composer": {
+        "x": 17,
+        "y": 577.53125,
+        "width": 356,
+        "height": 72.78125,
+        "top": 577.53125,
+        "right": 373,
+        "bottom": 650.3125,
+        "left": 17
+      },
+      "horizontalOverflow": false,
+      "voiceBackground": "rgba(0, 0, 0, 0)",
+      "axeViolations": 0,
+      "textLoadingReplyError": true,
+      "micDenied": true,
+      "muteEndCloseCleanup": true
+    },
+    {
+      "width": 320,
+      "voice": {
+        "x": 1,
+        "y": 655.109375,
+        "width": 318,
+        "height": 88.390625,
+        "top": 655.109375,
+        "right": 319,
+        "bottom": 743.5,
+        "left": 1
+      },
+      "composer": {
+        "x": 17,
+        "y": 561.03125,
+        "width": 286,
+        "height": 72.78125,
+        "top": 561.03125,
+        "right": 303,
+        "bottom": 633.8125,
+        "left": 17
+      },
+      "horizontalOverflow": false,
+      "voiceBackground": "rgba(0, 0, 0, 0)",
+      "axeViolations": 0,
+      "textLoadingReplyError": true,
+      "micDenied": true,
+      "muteEndCloseCleanup": true
+    }
+  ],
+  "errors": []
+}

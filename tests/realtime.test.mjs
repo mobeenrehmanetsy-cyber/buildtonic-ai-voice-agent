@@ -141,6 +141,9 @@ test("one session only, actual mute tracks, cleanup and event states", async (t)
   await s.adapter.connect({ activatedByUser: true, payload });
   await s.adapter.connect({ activatedByUser: true, payload });
   assert.equal(s.pcs.length, 1);
+  s.adapter.setMuted(true);
+  s.adapter.setMuted(false);
+  assert.equal(s.states.at(-1).phase, "connecting");
   s.event({ type: "session.created" });
   assert.equal(s.states.at(-1).phase, "listening");
   s.event({ type: "input_audio_buffer.speech_started" });

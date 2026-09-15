@@ -6,12 +6,8 @@ export class PublicError extends Error {
     this.status = status;
   }
 }
-export function assertLocalRequest(request: Request) {
-  if (process.env.VERCEL)
-    throw new PublicError(403, "AI public deployment has not been enabled.");
+export function assertSameOriginRequest(request: Request) {
   const url = new URL(request.url);
-  if (!["localhost", "127.0.0.1", "[::1]"].includes(url.hostname))
-    throw new PublicError(403, "AI access is limited to local testing.");
   // Next can normalise request.url to localhost even when the browser uses
   // 127.0.0.1. Check the actual Host too, without trusting forwarded headers.
   if (request.method === "POST") {
@@ -20,8 +16,10 @@ export function assertLocalRequest(request: Request) {
     let valid = false;
     try {
       const browser = new URL(origin ?? "");
-      valid = ["localhost", "127.0.0.1", "[::1]"].includes(browser.hostname)
-        && browser.host === host && browser.protocol === url.protocol;
+      const local = ["localhost", "127.0.0.1", "[::1]"].includes(browser.hostname);
+      valid = browser.origin === origin && browser.host === host
+        && (browser.protocol === "https:" || (local && browser.protocol === "http:"))
+        && request.headers.get("sec-fetch-site") !== "cross-site";
     } catch { /* Missing or malformed origins are rejected. */ }
     if (!valid)
       throw new PublicError(403, "Please use the assistant on this website.");

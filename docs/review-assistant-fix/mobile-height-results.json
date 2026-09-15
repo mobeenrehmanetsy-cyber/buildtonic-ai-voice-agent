@@ -1,0 +1,16 @@
+[
+  {
+    "width": 390,
+    "height": 500,
+    "missingConfiguration": true,
+    "deniedAndTextError": true,
+    "controlsReachable": true
+  },
+  {
+    "width": 320,
+    "height": 500,
+    "missingConfiguration": true,
+    "deniedAndTextError": true,
+    "controlsReachable": true
+  }
+]

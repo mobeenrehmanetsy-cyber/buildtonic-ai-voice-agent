@@ -89,12 +89,20 @@ export default function AssistantPanel({
   useEffect(() => {
     mounted.current = true;
     const stop = new AbortController();
-    fetch("/api/assistant/status", { signal: stop.signal })
-      .then((r) => r.json())
+    fetch("/api/assistant/status", { signal: stop.signal, cache: "no-store" })
+      .then(async (r) => {
+        if (!r.ok) throw Error("Status unavailable");
+        const data = await r.json();
+        if (typeof data.configured !== "boolean") throw Error("Invalid status");
+        return data;
+      })
       .then((data) => {
         if (mounted.current) setConfigured(data.configured === true);
       })
-      .catch(() => {});
+      .catch(() => {
+        if (!stop.signal.aborted && mounted.current)
+          setNotice("Availability could not be checked. You can try a message or contact the team.");
+      });
     return () => {
       mounted.current = false;
       stop.abort();
@@ -103,7 +111,7 @@ export default function AssistantPanel({
     };
   }, []);
   useEffect(() => {
-    if (follow.current && log.current)
+    if (follow.current && log.current && (session.messages.length > 0 || busy))
       log.current.scrollTop = log.current.scrollHeight;
   }, [session.messages, busy, notice]);
   function endVoice() {
@@ -115,7 +123,7 @@ export default function AssistantPanel({
   async function send(question: string, retry = false, starterId?: string) {
     if (busy || !question.trim()) return;
     selectedStarter.current = starterId ?? selectedStarter.current;
-    endVoice();
+    if (activeVoice || voiceStarting.current) endVoice();
     setBusy(true);
     setError("");
     setNotice("");
@@ -406,102 +414,109 @@ export default function AssistantPanel({
           </details>
         )}
       </div>
-      {(error || (!busy && session.pendingQuestion)) && (
-        <div className="ai-error" role="alert">
-          <p>{error || "This question has not received a reply yet."}</p>
-          {session.pendingQuestion && (
+      <div className="ai-dock">
+        {(error || (!busy && session.pendingQuestion)) && (
+          <div className="ai-error" role="alert">
+            <p>{error || "This question has not received a reply yet."}</p>
+            {session.pendingQuestion && (
+              <button
+                onClick={() => send(session.pendingQuestion!, true)}
+                disabled={busy}
+              >
+                Retry question
+              </button>
+            )}
+          </div>
+        )}
+        {notice && (
+          <p className="ai-notice" role="status">
+            {notice}
+          </p>
+        )}
+        <form
+          className="ai-composer"
+          onSubmit={(e) => {
+            e.preventDefault();
+            void send(input);
+          }}
+        >
+          <label className="sr-only" htmlFor="ai-question">
+            Type a question
+          </label>
+          <textarea
+            id="ai-question"
+            ref={textarea}
+            rows={2}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Type a question…"
+            maxLength={3000}
+            enterKeyHint="send"
+            onKeyDown={(e) => {
+              if (
+                e.key === "Enter" &&
+                !e.shiftKey &&
+                !e.nativeEvent.isComposing
+              ) {
+                e.preventDefault();
+                void send(input);
+              }
+            }}
+          />
+          <button
+            type="submit"
+            disabled={busy || !input.trim()}
+            aria-label="Send message"
+          >
+            ↑
+          </button>
+        </form>
+        <p className="ai-input-help">
+          {activeVoice
+            ? "Sending a message ends voice and continues by text."
+            : "Enter to send · Shift+Enter for a new line"}
+        </p>
+        <div className="ai-voice" data-phase={voice.phase}>
+          {activeVoice ? (
+            <SessionControls
+              snapshot={voice}
+              onMute={(muted) => realtime.current?.setMuted(muted)}
+              onEnd={endVoice}
+            />
+          ) : (
             <button
-              onClick={() => send(session.pendingQuestion!, true)}
+              className="ai-voice-start"
+              onClick={startVoice}
               disabled={busy}
             >
-              Retry question
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                <rect x="9" y="3" width="6" height="11" rx="3" />
+                <path d="M6 10v2a6 6 0 0 0 12 0v-2M12 18v4m-3 0h6" />
+              </svg>
+              Talk to Buildtonic
             </button>
           )}
+          {voice.phase === "idle" && <p className="ai-voice-hint">Ready when you are · Microphone off</p>}
+          {voice.error && <p role="alert">{voice.error}</p>}
+          {voice.phase === "ended" && (
+            <p role="status">Voice ended · Microphone off</p>
+          )}
         </div>
-      )}
-      {notice && (
-        <p className="ai-notice" role="status">
-          {notice}
+        <div className="ai-footer">
+          <Link href="/start-project" onClick={close}>
+            Project brief
+          </Link>
+          <a href="mailto:team@buildtonic.co.uk">Email</a>
+          <a href="tel:+442081292694">Call the team</a>
+          <Link href="/privacy" onClick={close}>
+            Privacy
+          </Link>
+        </div>
+        <p className="ai-privacy">
+          {label} · Messages and activated voice are processed by OpenAI.
+          Microphone access begins only when you choose voice.
         </p>
-      )}
-      <div className="ai-voice" data-phase={voice.phase}>
-        {activeVoice ? (
-          <SessionControls
-            snapshot={voice}
-            onMute={(muted) => realtime.current?.setMuted(muted)}
-            onEnd={endVoice}
-          />
-        ) : (
-          <button
-            className="ai-voice-start"
-            onClick={startVoice}
-            disabled={busy}
-          >
-            Talk to Buildtonic <span aria-hidden="true">↗</span>
-          </button>
-        )}
-        {voice.error && <p role="alert">{voice.error}</p>}
-        {voice.phase === "ended" && (
-          <p role="status">Voice ended · Microphone off</p>
-        )}
       </div>
-      <form
-        className="ai-composer"
-        onSubmit={(e) => {
-          e.preventDefault();
-          void send(input);
-        }}
-      >
-        <label className="sr-only" htmlFor="ai-question">
-          Type a question
-        </label>
-        <textarea
-          id="ai-question"
-          ref={textarea}
-          rows={2}
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Type a question…"
-          maxLength={3000}
-          enterKeyHint="send"
-          onKeyDown={(e) => {
-            if (
-              e.key === "Enter" &&
-              !e.shiftKey &&
-              !e.nativeEvent.isComposing
-            ) {
-              e.preventDefault();
-              void send(input);
-            }
-          }}
-        />
-        <button
-          type="submit"
-          disabled={busy || !input.trim()}
-          aria-label="Send message"
-        >
-          ↑
-        </button>
-      </form>
-      <p className="ai-input-help">
-        {activeVoice
-          ? "Sending a message ends voice and continues by text."
-          : "Enter to send · Shift+Enter for a new line"}
-      </p>
-      <div className="ai-footer">
-        <Link href="/start-project" onClick={close}>
-          Project brief
-        </Link>
-        <a href="mailto:team@buildtonic.co.uk">Email</a>
-        <a href="tel:+442081292694">Call the team</a>
-        <Link href="/privacy" onClick={close}>
-          Privacy
-        </Link>
-      </div>
-      <p className="ai-privacy">
-        {label} · Messages and activated voice are processed by OpenAI.
-        Microphone access begins only when you choose voice.
-      </p>
     </>
   );
 }

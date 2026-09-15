@@ -368,7 +368,7 @@ export class BrowserRealtime {
     this.state({
       ...this.snapshot,
       microphone: muted ? "muted" : "live",
-      phase: muted ? "muted" : "listening",
+      phase: a.ready ? (muted ? "muted" : "listening") : this.snapshot.phase,
     });
   }
   end() {

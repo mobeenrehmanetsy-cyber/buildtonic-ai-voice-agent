@@ -3,13 +3,14 @@ import assert from "node:assert/strict";
 import { readFileSync, readdirSync } from "node:fs";
 import { POST as textPost } from "../app/api/assistant/text/route.ts";
 import { POST as voicePost } from "../app/api/assistant/realtime/route.ts";
-import { assertLocalRequest } from "../app/agent/server.ts";
+import { GET as statusGet } from "../app/api/assistant/status/route.ts";
+import { assertSameOriginRequest } from "../app/agent/server.ts";
 import { emptyQualification } from "../app/agent/qualification.ts";
 const request = (body) =>
-  new Request("http://localhost:3100/api/assistant/text", {
+  new Request("https://buildtonic-ai-voice-agent.vercel.app/api/assistant/text", {
     method: "POST",
     headers: {
-      origin: "http://localhost:3100",
+      origin: "https://buildtonic-ai-voice-agent.vercel.app",
       "content-type": "application/json",
     },
     body: JSON.stringify(body),
@@ -22,10 +23,10 @@ const input = {
 };
 
 test("normalised Next URL accepts matching local Host and Origin only", () => {
-  assert.doesNotThrow(() => assertLocalRequest(new Request("http://localhost:3100/api/assistant/text", {
+  assert.doesNotThrow(() => assertSameOriginRequest(new Request("http://localhost:3100/api/assistant/text", {
     method: "POST", headers: { host: "127.0.0.1:3100", origin: "http://127.0.0.1:3100" },
   })));
-  assert.throws(() => assertLocalRequest(new Request("http://localhost:3100/api/assistant/text", {
+  assert.throws(() => assertSameOriginRequest(new Request("http://localhost:3100/api/assistant/text", {
     method: "POST", headers: { host: "localhost:3100", origin: "http://127.0.0.1:3100" },
   })));
 });
@@ -37,21 +38,24 @@ test("missing configuration and origin failures never call OpenAI", async () => 
     assert.equal(r.status, 503);
     assert.ok(!(await r.text()).includes("OPENAI_API_KEY"));
     assert.throws(() =>
-      assertLocalRequest(
+      assertSameOriginRequest(
         new Request("http://localhost:3100", {
           method: "POST",
           headers: { origin: "https://other.example" },
         }),
       ),
     );
-    assert.throws(() =>
-      assertLocalRequest(new Request("https://public.example")),
+    assert.doesNotThrow(() =>
+      assertSameOriginRequest(new Request("https://public.example")),
     );
   } finally {
     if (old !== undefined) process.env.OPENAI_API_KEY = old;
   }
 });
 test("server owns instructions/models; key never enters returned data", async (t) => {
+  const oldVercel = process.env.VERCEL;
+  process.env.VERCEL = "1";
+  t.after(() => { if (oldVercel === undefined) delete process.env.VERCEL; else process.env.VERCEL = oldVercel; });
   const old = process.env.OPENAI_API_KEY;
   process.env.OPENAI_API_KEY = "TEST_ONLY_NOT_A_REAL_KEY";
   t.after(() => {
@@ -117,6 +121,9 @@ test("upstream errors and malformed responses are sanitised", async (t) => {
   assert.equal(r.status, 502);
 });
 test("Realtime uses multipart unified call and returns only SDP", async (t) => {
+  const oldVercel = process.env.VERCEL;
+  process.env.VERCEL = "1";
+  t.after(() => { if (oldVercel === undefined) delete process.env.VERCEL; else process.env.VERCEL = oldVercel; });
   const old = process.env.OPENAI_API_KEY;
   process.env.OPENAI_API_KEY = "TEST_ONLY_NOT_A_REAL_KEY";
   t.after(() => {
@@ -135,6 +142,30 @@ test("Realtime uses multipart unified call and returns only SDP", async (t) => {
   });
   const r = await voicePost(request({ ...input, sdp: "v=0\r\nTEST OFFER" }));
   assert.deepEqual(await r.json(), { sdp: "v=0\r\nTEST ANSWER" });
+});
+
+test("Vercel status depends only on server key presence and is never cached", async (t) => {
+  const old = process.env.OPENAI_API_KEY, oldVercel = process.env.VERCEL;
+  t.after(() => {
+    if (old === undefined) delete process.env.OPENAI_API_KEY; else process.env.OPENAI_API_KEY = old;
+    if (oldVercel === undefined) delete process.env.VERCEL; else process.env.VERCEL = oldVercel;
+  });
+  process.env.VERCEL = "1";
+  const req = new Request("https://buildtonic-ai-voice-agent.vercel.app/api/assistant/status");
+  for (const configured of [false, true]) {
+    process.env.OPENAI_API_KEY = configured ? "TEST_ONLY_NOT_A_REAL_KEY" : " ";
+    const response = await statusGet(req);
+    assert.equal(response.status, 200);
+    assert.equal(response.headers.get("cache-control"), "no-store");
+    assert.deepEqual(await response.json(), { configured });
+  }
+});
+
+test("production origin guard rejects foreign, absent, malformed and insecure origins", () => {
+  for (const origin of ["https://other.example", "null", "https://buildtonic-ai-voice-agent.vercel.app/", "http://buildtonic-ai-voice-agent.vercel.app", ""]) {
+    assert.throws(() => assertSameOriginRequest(new Request("https://buildtonic-ai-voice-agent.vercel.app/api/assistant/text", { method: "POST", headers: { origin } })));
+  }
+  assert.throws(() => assertSameOriginRequest(new Request("https://buildtonic-ai-voice-agent.vercel.app/api/assistant/text", { method: "POST", headers: { origin: "https://buildtonic-ai-voice-agent.vercel.app", "sec-fetch-site": "cross-site" } })));
 });
 test("client source does not reference permanent API credentials", () => {
   for (const dir of ["app/voice", "app/components"])
