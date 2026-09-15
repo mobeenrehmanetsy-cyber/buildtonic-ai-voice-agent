@@ -1,0 +1,80 @@
+[
+  {
+    "width": 1920,
+    "closed": {
+      "x": 1830,
+      "y": 910,
+      "width": 62,
+      "height": 62
+    },
+    "hoverAndFocus": "passed",
+    "opensWithoutMicrophone": true,
+    "voiceControlRequestsMicrophone": true,
+    "noLayoutShift": true
+  },
+  {
+    "width": 1440,
+    "closed": {
+      "x": 1350,
+      "y": 910,
+      "width": 62,
+      "height": 62
+    },
+    "hoverAndFocus": "passed",
+    "opensWithoutMicrophone": true,
+    "voiceControlRequestsMicrophone": true,
+    "noLayoutShift": true
+  },
+  {
+    "width": 1366,
+    "closed": {
+      "x": 1276,
+      "y": 910,
+      "width": 62,
+      "height": 62
+    },
+    "hoverAndFocus": "passed",
+    "opensWithoutMicrophone": true,
+    "voiceControlRequestsMicrophone": true,
+    "noLayoutShift": true
+  },
+  {
+    "width": 768,
+    "closed": {
+      "x": 678,
+      "y": 910,
+      "width": 62,
+      "height": 62
+    },
+    "hoverAndFocus": "passed",
+    "opensWithoutMicrophone": true,
+    "voiceControlRequestsMicrophone": true,
+    "noLayoutShift": true
+  },
+  {
+    "width": 390,
+    "closed": {
+      "x": 316,
+      "y": 770,
+      "width": 56,
+      "height": 56
+    },
+    "hoverAndFocus": "touch only",
+    "opensWithoutMicrophone": true,
+    "voiceControlRequestsMicrophone": true,
+    "noLayoutShift": true
+  },
+  {
+    "width": 320,
+    "closed": {
+      "x": 246,
+      "y": 770,
+      "width": 56,
+      "height": 56
+    },
+    "hoverAndFocus": "touch only",
+    "opensWithoutMicrophone": true,
+    "voiceControlRequestsMicrophone": true,
+    "noLayoutShift": true
+  }
+]

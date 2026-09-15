@@ -41,7 +41,7 @@ export function VoiceAssistant() {
       <button
         ref={launcher}
         className="voice-launcher"
-        aria-label="Talk to Buildtonic — AI assistant"
+        aria-label="Open Buildtonic AI assistant"
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-controls="buildtonic-assistant"
@@ -54,7 +54,7 @@ export function VoiceAssistant() {
         onFocus={() => setInvited(true)}
         onBlur={() => setInvited(false)}
       >
-        <span className="voice-invitation">Ask Buildtonic · Text or voice</span>
+        <span className="voice-invitation" aria-hidden="true">Talk to Buildtonic</span>
         <span className="voice-orb">
           <svg
             width="24"

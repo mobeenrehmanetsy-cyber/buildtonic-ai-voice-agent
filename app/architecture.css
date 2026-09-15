@@ -926,11 +926,6 @@ h2 em {
   margin-top: 15px;
   max-width: 480px;
 }
-.voice-orb {
-  background: var(--ink);
-  box-shadow: 0 5px 22px #252b2b20;
-  border: 1px solid #9da9aa;
-}
 .voice-panel {
   border-radius: 2px;
   border: 1px solid #839194;
@@ -955,10 +950,6 @@ h2 em {
 }
 .voice-brand {
   letter-spacing: -0.035em;
-}
-.voice-invitation {
-  border-radius: 0;
-  background: var(--ink);
 }
 @media (min-width: 1700px) {
   .wrap {
