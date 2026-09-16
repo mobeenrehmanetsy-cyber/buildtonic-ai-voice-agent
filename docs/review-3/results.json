@@ -1,0 +1,69 @@
+[
+  {
+    "width": 1920,
+    "overflow": false,
+    "axeViolations": 0,
+    "sevenSteps": true,
+    "consentDefault": null,
+    "receipt": "saved_locally",
+    "assistantOpens": true,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "overflow": false,
+    "axeViolations": 0,
+    "sevenSteps": true,
+    "consentDefault": null,
+    "receipt": "saved_locally",
+    "assistantOpens": true,
+    "errors": []
+  },
+  {
+    "width": 1366,
+    "overflow": false,
+    "axeViolations": 0,
+    "sevenSteps": true,
+    "consentDefault": null,
+    "receipt": "saved_locally",
+    "assistantOpens": true,
+    "errors": []
+  },
+  {
+    "width": 768,
+    "overflow": false,
+    "axeViolations": 0,
+    "sevenSteps": true,
+    "consentDefault": null,
+    "receipt": "saved_locally",
+    "assistantOpens": true,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "overflow": false,
+    "axeViolations": 0,
+    "sevenSteps": true,
+    "consentDefault": null,
+    "receipt": "saved_locally",
+    "assistantOpens": true,
+    "errors": []
+  },
+  {
+    "width": 320,
+    "overflow": false,
+    "axeViolations": 0,
+    "sevenSteps": true,
+    "consentDefault": null,
+    "receipt": "saved_locally",
+    "assistantOpens": true,
+    "errors": []
+  },
+  {
+    "aiImport": "manual conflicts preserved",
+    "localNavigation": "draft retained",
+    "phoneChange": "consent reset",
+    "submissionFailure": "draft retained; no false receipt",
+    "providerRequests": "mocked, no paid calls"
+  }
+]

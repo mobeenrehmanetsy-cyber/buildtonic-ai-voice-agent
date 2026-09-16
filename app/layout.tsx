@@ -4,6 +4,7 @@ import "./globals.css";
 import "./refinements.css";
 import "./architecture.css";
 import "./voice/assistant.css";
+import "./phase3.css";
 import { Header } from "./components/header";
 import { Footer } from "./ui";
 import { VoiceAssistant } from "./voice/assistant";

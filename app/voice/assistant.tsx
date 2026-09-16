@@ -20,6 +20,11 @@ export function VoiceAssistant() {
   const [invited, setInvited] = useState(false);
   const close = () => dialog.current?.close();
   useEffect(() => {
+    const show = () => { setOpen(true); if (!dialog.current?.open) dialog.current?.showModal(); };
+    window.addEventListener("buildtonic:open-assistant", show);
+    return () => window.removeEventListener("buildtonic:open-assistant", show);
+  }, []);
+  useEffect(() => {
     if (previousPath.current !== pathname) {
       dialog.current?.close();
       previousPath.current = pathname;

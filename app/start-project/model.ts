@@ -2,6 +2,7 @@
 export type ProjectBrief = {
   service: string;
   location: string;
+  postcode: string;
   property: string;
   heritage: string;
   description: string;
@@ -17,6 +18,9 @@ export type ProjectBrief = {
   email: string;
   phone: string;
   preferredContact: string;
+  preferredLanguage: string;
+  preferredCallTime: string;
+  deadline: string;
   consent: boolean;
   referenceProject: string;
   summaryConfirmed: boolean;
@@ -24,6 +28,7 @@ export type ProjectBrief = {
 export const emptyBrief: ProjectBrief = {
   service: "",
   location: "",
+  postcode: "",
   property: "",
   heritage: "Unsure",
   description: "",
@@ -39,12 +44,17 @@ export const emptyBrief: ProjectBrief = {
   email: "",
   phone: "",
   preferredContact: "Email",
+  preferredLanguage: "en-GB",
+  preferredCallTime: "",
+  deadline: "",
   consent: false,
   referenceProject: "",
   summaryConfirmed: false,
 };
 export const services = [
   "New home",
+  "Extension",
+  "Renovation",
   "Extension or renovation",
   "Heritage or conservation",
   "Consent coordination",
@@ -69,6 +79,7 @@ export function briefRows(b: ProjectBrief): [string, string][] {
   return [
     ["Project", b.service],
     ["Location", b.location],
+    ["Postcode", b.postcode],
     ["Property", b.property],
     ["Heritage status", b.heritage],
     ["Your idea", b.description],
@@ -81,11 +92,14 @@ export function briefRows(b: ProjectBrief): [string, string][] {
       : []),
     ["Budget preference", b.budget],
     ["Timing", b.timeline],
+    ["Important deadline", b.deadline],
     ["Known constraints", b.constraints],
     ["Name", b.name],
     ["Email", b.email],
     ["Telephone", b.phone],
     ["Preferred contact", b.preferredContact],
+    ["Preferred language", b.preferredLanguage],
+    ["Best time to contact", b.preferredCallTime],
     ["Project that inspired you", b.referenceProject],
   ].map(([label, value]) => [label, value.trim() || "Not specified"]);
 }

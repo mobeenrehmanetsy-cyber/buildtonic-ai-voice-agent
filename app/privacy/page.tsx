@@ -23,14 +23,15 @@ export default function PrivacyPage() {
         </p>
         <h2>Contacting the team</h2>
         <p>
-          The project brief holds your answers only in the current page’s
-          browser memory. It does not send them to a server or save them in
-          browser storage. Leaving or refreshing the page clears your answers.
-          You can review the brief, download a text file to your device or open
-          an email draft. You must send that email yourself; this website cannot
-          confirm delivery. Email and telephone links open your own
-          applications. Information you choose to send by email is handled
-          outside this prototype.
+          Your project draft stays in browser memory during local navigation;
+          refreshing clears it. Choosing Submit enquiry sends the reviewed
+          details and contact preferences to this website’s server. The server
+          validates them and returns a receipt only after storage succeeds.
+          Local development receipts explicitly identify local storage and do
+          not mean the team received your enquiry. Production submission is
+          unavailable until persistent storage is connected. You can download a
+          copy and contact the team directly if submission is unavailable. Email
+          and telephone links open your own applications.
         </p>
         <h2>Project videos and external media</h2>
         <p>
@@ -60,9 +61,11 @@ export default function PrivacyPage() {
           Messages, project notes and language choice are held in this site’s
           browser memory across local page navigation. Clear chat removes the
           conversation and notes from that memory; refreshing clears the
-          session. No conversation database, local-storage transcript or
-          application audio recording is created. A draft can be explicitly
-          imported into the project brief, reviewed and shared by you.
+          session. Website chat does not create a conversation database,
+          local-storage transcript or application audio recording. You can
+          explicitly import assistant notes into your project enquiry or send
+          your draft to the assistant; review conflicting answers before
+          submission.
         </p>
         <p>
           OpenAI processes the data needed to provide the service. Text requests
@@ -78,13 +81,32 @@ export default function PrivacyPage() {
           . Avoid sharing unnecessary sensitive information. The assistant does
           not place telephone calls.
         </p>
+        <h2>Optional telephone AI</h2>
+        <p>
+          Telephone AI is being prepared and is not connected yet. An outbound
+          AI call requires a separate, explicit choice in the enquiry form.
+          Declining does not prevent normal submission. Consent is recorded with
+          a server timestamp and the telephone number you supplied; the AI
+          cannot grant that consent. A preference is not a scheduled call.
+          Contact the team to withdraw your preference before a call is
+          arranged.
+        </p>
+        <p>
+          When telephone AI is enabled, Telnyx will handle the call and the
+          configured AI provider will process the conversation. The assistant
+          identifies itself as AI and asks permission before retaining new
+          project notes. Relevant notes, call status and any generated summary
+          may be stored for enquiry review. This application does not request
+          call recordings or retain raw audio by default. Provider processing
+          and retention settings must be reviewed before live use.
+        </p>
         <h2>Questions or a future change</h2>
         <p>
           Contact{" "}
           <a href="mailto:team@buildtonic.co.uk">team@buildtonic.co.uk</a> with
-          privacy questions. This notice must be reviewed before public AI
-          deployment, enquiry submission or telephone-call handling is
-          introduced.
+          privacy questions or requests about submitted information. Production
+          storage, retention periods, access arrangements and telephone-provider
+          settings must be confirmed before live enquiry and telephone handling.
         </p>
       </section>
     </main>
